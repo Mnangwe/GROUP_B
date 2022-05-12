@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/index.html"></script>
+</head>
+<body>
+<form>
+    <label>
+        <input type="email" id="email">
+    </label>
+    <button type="submit" onclick="isEmailValid();">submit</button>
+</form>
+
+<script>
+    function isEmailValid(email) {
+        let email = document.getElementById("email").value;
+        const emailRegexp = new RegExp(
+          /^[a-zA-Z0-9][\-_\.\+\!\#\$\%\&\'\*\/\=\?\^\`\{\|]{0,1}([a-zA-Z0-9][\-_\.\+\!\#\$\%\&\'\*\/\=\?\^\`\{\|]{0,1})*[a-zA-Z0-9]@[a-zA-Z0-9][-\.]{0,1}([a-zA-Z][-\.]{0,1})*[a-zA-Z0-9]\.[a-zA-Z0-9]{1,}([\.\-]{0,1}[a-zA-Z]){0,}[a-zA-Z0-9]{0,}$/i
+        )
+        console.log(email);
+        return emailRegexp.test(email);
+     }
+    </script>
+</body>
+</html>
